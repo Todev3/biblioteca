@@ -1,16 +1,16 @@
-package com.biblioteca.model;
+package com.biblioteca.dto;
 
 import java.time.LocalDate;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-//@Entity
-public class Livro {
+@ApiModel(value="Livro", description = "Uma model simples de um livro")
+public class LivroDTO {
 	
-//	@Id
 	private Integer id;
 	
 	private String nome;
@@ -19,7 +19,7 @@ public class Livro {
 	
 	private LocalDate ano;
 	
-	public Livro(Integer id, String nome, String autor, LocalDate ano) {
+	public LivroDTO(Integer id, String nome, String autor, LocalDate ano) {
 		this.id = id;
 		this.nome = nome;
 		this.autor = autor;
