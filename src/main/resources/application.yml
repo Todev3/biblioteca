@@ -1,11 +1,19 @@
 server:
     port: 8099
 
-#spring:
-#    datasource:
-#        url: jdbc:oracle:thin:@//localhost:1521/xe
-#        username: system
-#        password: oracle
-#        driver-class-name: oracle.jdbc.OracleDriver
-#    jpa:
-#        database-platform: org.hibernate.dialect.Oracle10gDialect
+spring:
+    datasource:
+        initialization-mode: always
+        url: jdbc:oracle:thin:@localhost:1521/xe
+        username: system
+        password: oracle
+        driverClassName: oracle.jdbc.OracleDriver
+        hikari:
+            connection-test-query: "SELECT 1 FROM DUAL"
+    jpa:
+        properties:
+            hibernate:
+                ddl-auto: none
+                create_empty_composites:
+                    enable: true
+                dialect: org.hibernate.dialect.Oracle12cDialect

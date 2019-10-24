@@ -11,7 +11,7 @@ import lombok.Setter;
 @ApiModel(value="Livro", description = "Uma model simples de um livro")
 public class LivroDTO {
 	
-	private Integer id;
+	private Long id;
 	
 	private String nome;
 	
@@ -19,7 +19,7 @@ public class LivroDTO {
 	
 	private LocalDate ano;
 	
-	public LivroDTO(Integer id, String nome, String autor, LocalDate ano) {
+	public LivroDTO(Long id, String nome, String autor, LocalDate ano) {
 		this.id = id;
 		this.nome = nome;
 		this.autor = autor;

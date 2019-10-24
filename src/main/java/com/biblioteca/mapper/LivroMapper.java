@@ -1,15 +1,18 @@
-package com.biblioteca.map;
+package com.biblioteca.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.biblioteca.dto.LivroDTO;
 import com.biblioteca.model.Livro;
 
+@Service
 public class LivroMapper {
 	
 	public Livro toModel(LivroDTO dto) {
-		return new Livro(dto.getId(), dto.getNome(), dto.getAutor(), dto.getAno());
+		return new Livro(dto.getNome(), dto.getAutor(), dto.getAno());
 	}
 	
 	public LivroDTO toDTO(Livro model) {
