@@ -12,7 +12,7 @@ import com.biblioteca.model.Livro;
 public class LivroMapper {
 	
 	public Livro toModel(LivroDTO dto) {
-		return new Livro(dto.getNome(), dto.getAutor(), dto.getAno());
+		return new Livro(dto.getId(), dto.getNome(), dto.getAutor(), dto.getAno());
 	}
 	
 	public LivroDTO toDTO(Livro model) {

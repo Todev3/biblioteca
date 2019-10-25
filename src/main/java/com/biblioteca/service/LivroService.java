@@ -18,12 +18,20 @@ public class LivroService {
 	@Autowired
 	private LivroMapper livroMapper;
 	
-	public void salvar(LivroDTO livro) {
-		this.livroRepository.save(livroMapper.toModel(livro));
+	public LivroDTO salvar(LivroDTO livro) {
+		return this.livroMapper.toDTO(this.livroRepository.save(livroMapper.toModel(livro)));
 	}
 	
 	public List<LivroDTO> getAll() {
-		return livroMapper.toDTO(this.livroRepository.findAll());
+		return this.livroMapper.toDTO(this.livroRepository.findAll());
+	}
+	
+	public Boolean exists(Long id) {
+		return this.livroRepository.existsById(id);
+	}
+	
+	public void apagar(Long id) {
+		this.livroRepository.deleteById(id);
 	}
 	
 }

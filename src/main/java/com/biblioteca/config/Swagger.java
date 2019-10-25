@@ -33,7 +33,7 @@ public class Swagger {
 	    	      "API simples de gerenciamento de livros", 
 	    	      "0.0.1", 
 	    	      "", 
-	    	      new Contact("Emerson ABdias", "", "emerson_abedias@hotmail.com"), 
+	    	      new Contact("Emerson Abdias", "", "emerson_abedias@hotmail.com"), 
 	    	      "", "", Collections.emptyList());
 	}
 	

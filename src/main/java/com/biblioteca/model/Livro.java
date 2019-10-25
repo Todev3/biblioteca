@@ -35,7 +35,8 @@ public class Livro implements Serializable {
 	protected Livro() {
 	}
 	
-	public Livro(String nome, String autor, LocalDate ano) {
+	public Livro(Long id, String nome, String autor, LocalDate ano) {
+		this.id = id;
 		this.nome = nome;
 		this.autor = autor;
 		this.ano = ano;
