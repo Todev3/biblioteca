@@ -38,11 +38,15 @@ public class LivroController {
 		return new ResponseEntity<>(this.livroService.salvar(livroDTO), HttpStatus.CREATED);
 	}
 	
-	@PutMapping
+	@PutMapping("/{id}")
 	@ApiOperation(value = "Atualiza um livro")
-	public ResponseEntity<LivroDTO> updateLivro(LivroDTO livro) {
-		return new ResponseEntity<>(this.livroService.salvar(livro), HttpStatus.CREATED);
-	}
+	public ResponseEntity<LivroDTO> updateLivro(LivroDTO livro, @PathVariable Long id) {
+		if(this.livroService.exists(id)) {
+			return new ResponseEntity<>(this.livroService.salvar(livro), HttpStatus.CREATED);
+		}
+		
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	}	
 	
 	@DeleteMapping("/{id}")
 	@ApiOperation(value = "Apaga um livro")
